@@ -64,6 +64,13 @@
     <input type="radio" name="db" id="dbLocalForageWebSQL"
            value="localForageWebSQL"/>
     <label for="dbLocalForageWebSQL">LocalForage (WebSQL)</label>
+    <br/>
+    <input type="radio" name="db" id="dbLocalForageBulk" value="localForageBulk"/>
+    <label for="dbLocalForageBulk">LocalForage setItems()</label>
+    <br/>
+    <input type="radio" name="db" id="dbLocalForageWebSQLBulk"
+           value="localForageWebSQLBulk"/>
+    <label for="dbLocalForageWebSQLBulk">LocalForage setItems() (WebSQL)</label>
   </div>
 </div>
 
@@ -106,6 +113,7 @@
 <script src="node_modules/pouchdb/dist/pouchdb.min.js"></script>
 <script src="node_modules/worker-pouch/dist/pouchdb.worker-pouch.min.js"></script>
 <script src="node_modules/localforage/dist/localforage.min.js"></script>
+<script src="node_modules/localforage-setitems/dist/localforage-setitems.js"></script>
 <script src="node_modules/lokijs/build/lokijs.min.js"></script>
 <script src="tester.js"></script>
 <script src="index.js"></script>

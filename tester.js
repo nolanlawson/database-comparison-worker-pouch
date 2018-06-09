@@ -166,6 +166,22 @@ function createTester() {
     return promise;
   }
 
+  function localForageBulkTest(docs) {
+    var payload = {};
+    for (var i = 0; i < docs.length; i++) {
+      payload['doc_' + i] = docs[i];
+    }
+    return localForageDB.setItems(payload);
+  }
+
+  function localForageWebSQLBulkTest(docs) {
+    var payload = {};
+    for (var i = 0; i < docs.length; i++) {
+      payload['doc_' + i] = docs[i];
+    }
+    return localForageWebSQLDB.setItems(payload);
+  }
+
   function dexieTest(docs) {
     return dexieDB.transaction('rw', dexieDB.docs, function () {
       for (var i = 0; i < docs.length; i++) {
@@ -274,6 +290,10 @@ function createTester() {
         return localForageTest;
       case 'localForageWebSQL':
         return localForageWebSQLTest;
+      case 'localForageBulk':
+        return localForageBulkTest;
+      case 'localForageWebSQLBulk':
+        return localForageWebSQLBulkTest;
       case 'dexie':
         return dexieTest;
       case 'idb':
